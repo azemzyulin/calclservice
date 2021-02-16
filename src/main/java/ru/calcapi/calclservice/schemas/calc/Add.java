@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
     "intB"
 })
 @XmlRootElement(name = "Add")
-public class Add {
+public class Add implements ActionI{
 
     protected int intA;
     protected int intB;

@@ -15,21 +15,6 @@ public class CalclserviceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CalclserviceApplication.class, args);}
-        @Bean
-    Integer testapp(SOAPConnector soapConnector) {
-        int a = 2;
-        int b = 2;
-        Add request = new Add();
-        request.setIntA(a);
-        request.setIntB(b);
-        AddResponse response = (AddResponse) soapConnector.callWebService(soapConnector.getDefaultUri(), request
-           );
-        System.out.println("Got Response As below ========= : ");
-        System.out.println("Add : " + a + "+" + b + " = " + response.getAddResult());
-        return 1;
-    }
-
-
 
     }
 

@@ -1,5 +1,6 @@
 package ru.calcapi.calclservice.service;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
 

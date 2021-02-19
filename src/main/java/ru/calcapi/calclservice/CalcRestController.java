@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import ru.calcapi.calclservice.models.BaseRequest;
+import ru.calcapi.calclservice.models.BaseResponse;
 import ru.calcapi.calclservice.schemas.calc.*;
+import ru.calcapi.calclservice.service.SOAPConnector;
 
 import javax.validation.Valid;
 

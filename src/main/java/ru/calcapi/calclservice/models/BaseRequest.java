@@ -1,4 +1,4 @@
-package ru.calcapi.calclservice;
+package ru.calcapi.calclservice.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,8 @@ import javax.validation.constraints.*;
 
 @Data
 public class BaseRequest {
-    @Pattern(regexp = "^-?\\d{1,10}\\b", message = "number must by int")
+    @Pattern(regexp = "^-?\\d{1,10}\\b", message = "intA must by int")
     private String intA;
-
-    @Pattern(regexp = "^-?\\d{1,10}\\b", message = "number must by int")
+    @Pattern(regexp = "^-?\\d{1,10}\\b", message = "intB must by int")
     private String intB;
 }

@@ -1,9 +1,10 @@
-package ru.calcapi.calclservice;
+package ru.calcapi.calclservice.conf;
 
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import ru.calcapi.calclservice.service.SOAPConnector;
 
 @Configuration
 public class Config {

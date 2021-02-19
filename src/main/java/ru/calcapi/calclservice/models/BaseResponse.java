@@ -1,4 +1,4 @@
-package ru.calcapi.calclservice;
+package ru.calcapi.calclservice.models;
 
 import lombok.Data;
 
@@ -10,6 +10,5 @@ public class BaseResponse {
     public BaseResponse(Integer code) {
         this.result = code;
     }
-
 
 }

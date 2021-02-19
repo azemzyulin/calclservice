@@ -1,9 +1,9 @@
-package ru.calcapi.calclservice;
-
+package ru.calcapi.calclservice.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import ru.calcapi.calclservice.service.SOAPConnector;
 
 @Configuration
 public class Config {
@@ -13,6 +13,7 @@ public class Config {
         marshaller.setContextPath("ru.calcapi.calclservice.schemas.calc");
         return marshaller;
     }
+
     @Bean
     public SOAPConnector soapConnector(Jaxb2Marshaller marshaller) {
         SOAPConnector client = new SOAPConnector();

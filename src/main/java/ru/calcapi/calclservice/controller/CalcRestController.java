@@ -1,14 +1,11 @@
-package ru.calcapi.calclservice.controller;
+package ru.calcapi.calclservice;
 
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.calcapi.calclservice.models.BaseRequest;
-import ru.calcapi.calclservice.models.BaseResponse;
 import ru.calcapi.calclservice.schemas.calc.*;
-import ru.calcapi.calclservice.service.SOAPConnector;
 
 import javax.validation.Valid;
 
@@ -30,7 +27,6 @@ public class CalcRestController {
 
     @PostMapping("/multiply")
     public BaseResponse multiplyMap(@Valid @RequestBody BaseRequest request) {
-
         Multiply actionRequest = new Multiply();
         actionRequest.setIntA(Integer.parseInt(request.getIntA()));
         actionRequest.setIntB(Integer.parseInt(request.getIntB()));
@@ -41,7 +37,6 @@ public class CalcRestController {
 
     @PostMapping("/divide")
     public BaseResponse divideMap(@Valid @RequestBody BaseRequest request) {
-
         Divide actionRequest = new Divide();
         actionRequest.setIntA(Integer.parseInt(request.getIntA()));
         actionRequest.setIntB(Integer.parseInt(request.getIntB()));
@@ -52,7 +47,6 @@ public class CalcRestController {
 
     @PostMapping("/subtract")
     public BaseResponse subtractMap(@Valid @RequestBody BaseRequest request) {
-
         Subtract actionRequest = new Subtract();
         actionRequest.setIntA(Integer.parseInt(request.getIntA()));
         actionRequest.setIntB(Integer.parseInt(request.getIntB()));

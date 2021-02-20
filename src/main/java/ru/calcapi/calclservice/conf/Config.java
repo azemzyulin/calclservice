@@ -1,4 +1,4 @@
-package ru.calcapi.calclservice;
+package ru.calcapi.calclservice.conf;
 
 
 import org.springframework.context.annotation.Bean;

@@ -9,8 +9,10 @@ import javax.validation.constraints.*;
 
 @Data
 public class BaseRequest {
-    @Pattern(regexp = "^-?\\d{1,10}\\b", message = "intA must by int")
-    private String intA;
-    @Pattern(regexp = "^-?\\d{1,10}\\b", message = "intB must by int")
-    private String intB;
+    @Max(value = 2147483647, message = "intA > Integer.MAX")
+    @Min(value = -2147483648, message = "intA < Integer.MIN")
+    private int intA;
+    @Max(value = 2147483647, message = "intB > Integer.MAX")
+    @Min(value = -2147483648, message = "intB < Integer.MIN")
+    private int intB;
 }

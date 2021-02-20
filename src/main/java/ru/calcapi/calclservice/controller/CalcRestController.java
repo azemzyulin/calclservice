@@ -1,4 +1,4 @@
-package ru.calcapi.calclservice;
+package ru.calcapi.calclservice.controller;
 
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,8 @@ public class CalcRestController {
     @PostMapping("/add")
     public BaseResponse addMap(@RequestBody @Valid BaseRequest request) {
         Add actionRequest = new Add();
-        actionRequest.setIntA(Integer.parseInt(request.getIntA()));
-        actionRequest.setIntB(Integer.parseInt(request.getIntB()));
+        actionRequest.setIntA(request.getIntA());
+        actionRequest.setIntB(request.getIntB());
         AddResponse soapResponse = soapConnector.getCalcResult(actionRequest, AddResponse.class);
         BaseResponse response = new BaseResponse(soapResponse.getAddResult());
         return response;
@@ -31,8 +31,8 @@ public class CalcRestController {
     @PostMapping("/multiply")
     public BaseResponse multiplyMap(@Valid @RequestBody BaseRequest request) {
         Multiply actionRequest = new Multiply();
-        actionRequest.setIntA(Integer.parseInt(request.getIntA()));
-        actionRequest.setIntB(Integer.parseInt(request.getIntB()));
+        actionRequest.setIntA(request.getIntA());
+        actionRequest.setIntB(request.getIntB());
         MultiplyResponse soapResponse = soapConnector.getCalcResult(actionRequest, MultiplyResponse.class);
         BaseResponse response = new BaseResponse(soapResponse.getMultiplyResult());
         return response;
@@ -41,8 +41,8 @@ public class CalcRestController {
     @PostMapping("/divide")
     public BaseResponse divideMap(@Valid @RequestBody BaseRequest request) {
         Divide actionRequest = new Divide();
-        actionRequest.setIntA(Integer.parseInt(request.getIntA()));
-        actionRequest.setIntB(Integer.parseInt(request.getIntB()));
+        actionRequest.setIntA(request.getIntA());
+        actionRequest.setIntB(request.getIntB());
         DivideResponse soapResponse = soapConnector.getCalcResult(actionRequest, DivideResponse.class);
         BaseResponse response = new BaseResponse(soapResponse.getDivideResult());
         return response;
@@ -51,8 +51,8 @@ public class CalcRestController {
     @PostMapping("/subtract")
     public BaseResponse subtractMap(@Valid @RequestBody BaseRequest request) {
         Subtract actionRequest = new Subtract();
-        actionRequest.setIntA(Integer.parseInt(request.getIntA()));
-        actionRequest.setIntB(Integer.parseInt(request.getIntB()));
+        actionRequest.setIntA(request.getIntA());
+        actionRequest.setIntB(request.getIntB());
         SubtractResponse soapResponse = soapConnector.getCalcResult(actionRequest, SubtractResponse.class);
         BaseResponse response = new BaseResponse(soapResponse.getSubtractResult());
         return response;

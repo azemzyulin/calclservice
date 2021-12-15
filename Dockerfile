@@ -6,8 +6,6 @@ WORKDIR /home/gradle/project
 RUN gradle build
 ### Package stage
 FROM ${DOCKER_IMAGE_RUNNER}
-COPY --from=builder /home/gradle/project/build/libs/*.jar /deployments/app.jar
-COPY --from=builder /home/gradle/project/src/main/resources/application.properties /deployments/
-COPY --from=builder /home/gradle/project/src/main/resources/file.json /deployments/
+COPY --from=builder /home/gradle/project/build/*.* /deployments/
 EXPOSE 8080
 WORKDIR /deployments

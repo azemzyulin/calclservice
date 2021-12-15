@@ -7,5 +7,5 @@ RUN gradle build
 ### Package stage
 FROM ${DOCKER_IMAGE_RUNNER}
 COPY --from=builder /home/gradle/project/* /deployments/
-EXPOSE 8080
+EXPOSE 8888
 WORKDIR /deployments

@@ -3,8 +3,7 @@ ARG DOCKER_IMAGE_RUNNER=registry.access.redhat.com/ubi8/openjdk-11
 FROM ${DOCKER_IMAGE_BUILDER} AS builder
 COPY . /home/gradle/project
 WORKDIR /home/gradle/project
-RUN gradle wrapper
-RUN ./gradlew tasks bootjar
+RUN gradle build
 ### Package stage
 FROM ${DOCKER_IMAGE_RUNNER}
 COPY --from=builder /home/gradle/project/build/libs/*.jar /deployments/app.jar
